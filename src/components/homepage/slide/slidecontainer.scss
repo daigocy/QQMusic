@@ -1,0 +1,102 @@
+.slide-container {
+    position: relative;
+    background: url(bg_detail.jpg) 50% 0 repeat-x;
+    overflow: hidden;
+    .btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -54px;
+        width: 74.5px;
+        height: 108px;
+        z-index: 2;
+        background: rgba(0,0,0,.1);
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 0.5s;
+        &:hover {
+            opacity: 1;
+        }
+        &.left {
+            left: 0;
+            transform: translateX(-100%);
+        }
+        &.right {
+            right:0;
+            transform: translateX(100%);
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 20px;
+            height: 39px;
+        }
+        .arrow.left {
+            left: 29px;
+            background-position: -20px -120px;
+            background-position-x: -20px;
+            background-position-y: -120px;
+        }
+        .arrow.right {
+            right: 29px;
+            background-position: 0 -120px;
+            background-position-x: 0px;
+            background-position-y: -120px;
+        }
+    }
+    .content {
+        margin:0 auto;
+        //margin-right: -20px;
+        padding-top: 20px;
+        max-width: 1200px;
+        position: relative;
+        @media screen and (max-width:1300px){
+            margin:0 50px;
+        }
+        z-index: 2;
+        .title {
+            position: relative;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 0 auto;
+            width: 196px;
+            height: 40px;
+            text-align: center;
+        }
+        .window {
+            margin-right: -20px;
+            z-index: 2;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        .slidebody {
+            position: relative;
+            width: 1000%;
+            font-size: 0;
+        }
+    }
+    .shaddow {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+    }
+    &:hover {
+        .btn.left{
+            transform: translateX(0);
+            opacity: .5;      
+            &:hover {
+                opacity: 1;
+            }     
+        }
+        .btn.right{
+            transform: translateX(0);
+            opacity: .5; 
+            &:hover {
+                opacity: 1;
+            }   
+        }
+    }
+}

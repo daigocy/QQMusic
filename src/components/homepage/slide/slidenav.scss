@@ -1,0 +1,15 @@
+.slide-nav {
+    position: relative;
+    height: 50px;
+    text-align: center;
+    .nav-tab {
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 24px;
+        color: #333;
+        &.current, &:hover {
+            color: #31c27c;
+        }    
+    }
+}

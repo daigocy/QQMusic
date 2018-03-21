@@ -1,0 +1,59 @@
+.header {
+    max-width: 1200px;
+    margin:0 auto;
+    height: 90px;
+    font-size: 0px;
+    overflow: auto;
+    border-bottom: 1px solid #f2f2f2;
+    .logo {
+        //background-color: orange;
+        border: none;
+        display: inline-block;
+        vertical-align: top;
+        height: 90px;
+        img {
+            position: relative;
+            top: 22px;
+        }
+    }
+    .header-nav {
+        vertical-align: top;
+        margin-left: 28px;
+        display: inline-block;
+        a {
+            display: inline-block;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 90px;
+            text-align: center;
+            &.on {
+                background-color: #31C27C;
+                color: #fff;
+                &:hover {
+                    color: #fff;
+                }
+            }
+            &:hover {
+                color: #31c27c;
+            }
+        }
+    }
+    .userbox {
+        float: right;
+        height: 90px;
+        width: 90px;
+        font-size: 18px;
+        line-height: 90px;
+        &.on {
+                background-color: #31C27C;
+                color: #fff;
+                &:hover {
+                    color: #fff;
+                }
+            }
+        &:hover {
+            color: #31c27c;
+        }
+    }
+
+}

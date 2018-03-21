@@ -1,0 +1,19 @@
+.new-song-content {
+    position: relative;
+    width: 100%;
+    font-size: 0;
+    .songlist {
+        position: relative;
+        display: inline-block;
+        width: 10%;
+        .songitem {
+            position: relative;
+            display: inline-block;
+            //width: 33.333%;
+            //height: 90px;
+            line-height: 90px;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}

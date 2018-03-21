@@ -1,0 +1,39 @@
+.progress-box {
+    position: absolute;
+    width: 100%;
+    top:0;
+    left: 0;
+    padding-top: 6px;
+    height: 8px;
+    cursor: pointer;
+}
+.progressbar-box {
+    
+    height: 2px;
+    position: relative;
+    background: rgba(255,255,255,.1);
+    .progressbar-progress {
+        position: absolute;
+        height: 2px;
+        top: 0;
+        left: 0;
+        background: rgba(255,255,255,.2);
+    }
+    .progressbar-current {
+        position: absolute;
+        height: 2px;
+        top: 0;
+        left: 0;
+        background: rgba(255,255,255,.7);
+    }
+}
+
+.btn.progressbar-dot {
+    top: -4px;
+    right: -4px;
+    width: 10px;
+    height: 10px;
+    background-position: 0 -170px;
+    opacity: 1;
+    cursor: pointer;
+}

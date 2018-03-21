@@ -1,0 +1,19 @@
+.homepage-navbar {
+    max-width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    line-height: 50px;
+    a {
+        text-align: center;
+        &:hover, &.on {
+            color: #31c27c;
+        }
+        margin: 0 47px 0 0;
+        &:last-child {
+        margin: 0;
+        }
+    }
+    
+}

@@ -1,0 +1,44 @@
+.new-song-item {
+    position: relative;
+    height: 86px;
+    overflow: hidden;
+    border-top: 1px solid #f2f2f2;
+    margin: -1px 30px 13px 0;
+    padding-top: 12px;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    .cover {
+        position: relative;
+        float: left;
+        width: 86px;
+        height: 86px;
+        margin-right: 14px;
+    }
+    .item-info {
+        position: relative;
+        float: left;
+        max-width: 50%;
+        text-align: left;
+        
+        .song{
+            margin-top: 22px;
+            a:hover {
+                color: #31C27C;
+            }
+        }
+        .singer a{
+            color:#999999;
+            &:hover{
+                color: #31C27C;
+            }
+        }
+    }
+    .time{
+        line-height: 86px;
+        bottom:0;
+        right: 0;
+        color:#999999;
+        text-align: right
+    }
+}

@@ -1,0 +1,19 @@
+.recomend-content {
+    position: relative;
+    width: 100%;
+    font-size: 0;
+    .recomendlist {
+        position: relative;
+        display: inline-block;
+        width: 10%;
+        .recomenditem {
+            position: relative;
+            display: inline-block;
+            //width: 33.333%;
+            //height: 90px;
+            line-height: 90px;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
