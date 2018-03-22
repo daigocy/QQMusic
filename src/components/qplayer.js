@@ -318,15 +318,9 @@ class Qplayer extends Component {
         }
         let player = plyr.setup('.js-player',option)[0];
         this.vkeys = [];
-        // window.addEventListener("beforeunload",function (event) {
-        //     return "hahahha";
-        // });
     }
     componentDidMount() {
         let player = plyr.get('.js-player')[0]
-        // player.on('loadeddata', (e) => {
-        //     console.log("finished",player.getMedia().buffered.end(0));
-        // });
         player.on('timeupdate', (e)=> {
             let current = Math.floor(player.getCurrentTime());
             let currentPercent = (player.getCurrentTime()*100/player.getDuration()).toFixed(2);
@@ -338,12 +332,10 @@ class Qplayer extends Component {
                     currentLine = i;
                 }
             }
-            //this.setState({current: current, currentPercent:currentPercent, progress:  trange.end(trange.length-1)})
             this.setState({current: current, currentPercent:currentPercent, currentLine:currentLine})
         });
 
         player.on('volumechange', (e)=> {
-            //console.log(player.getVolume()*10, player.volume)
             this.setState({volume: player.getVolume()*10, isMute: player.isMuted()})
         })
 
@@ -351,13 +343,6 @@ class Qplayer extends Component {
             let total = Math.floor(player.getDuration()); 
             this.setState({isPlay: true, total: total});
         });
-
-        // player.on('seeking', (e)=>{
-        //     this.setState({isPlay: false})
-        // })
-        // player.on('seeked', (e)=> {
-        //     this.setState({isPlay: true});
-        // })
 
         let songMid = this.getCurrentSong().songmid;
         this.playSong(songMid);
@@ -421,9 +406,6 @@ class Qplayer extends Component {
         fetchJsonp(lyricUrl, {mode:'cors',method:'GET', jsonpCallbackFunction:'MusicJsonCallback_lrc'})
         .then( (response) => response.json())
         .then( (responseData) => {
-            //console.log(decodeURIComponent(escape(window.atob(lyricData))));
-            //this.setState({lyricData: decodeURIComponent(escape(window.atob(lyricData)))})
-            
             let lyricList = decodeURIComponent(escape(window.atob(responseData.lyric))).split('\n');
             console.log(lyricList);
             let timeReg = /\[(\d{2}):(\d{2})\.(\d{2})\]/;
@@ -468,17 +450,10 @@ class Qplayer extends Component {
     }
     songSeek(timePoint) {
         let player = plyr.get('.js-player')[0];
-        // console.log(player);
         player.seek(timePoint);
-        // if(timePoint > this.state.current) {
-        //     player.forward(timePoint-this.state.current);
-        // }else {
-        //     player.rewind(this.state.current - timePoint);
-        // }
     }
     updateVolume(newVolume) {
         let player = plyr.get('.js-player')[0];
-        // console.log(player);
         player.setVolume(newVolume);
     }
     nextSong() {
@@ -489,9 +464,6 @@ class Qplayer extends Component {
             nextSongIndex = this.state.currentSongIndex + 1;
         }
         this.changeSong(nextSongIndex);
-        // let songMid = this.state.songList[nextSongIndex].songmid;
-        // this.playSong(songMid);
-        // this.setState({currentSongIndex: nextSongIndex, progress:0});
     }
     render() {
         return <PlayerBody songList={this.state.songList} currentSongIndex={this.state.currentSongIndex}
@@ -512,5 +484,4 @@ class Qplayer extends Component {
     }
 }
 
-//export default hot(module)(Qplayer);
-export default Qplayer;
+export default hot(module)(Qplayer);
