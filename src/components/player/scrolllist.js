@@ -84,7 +84,12 @@ class ScrollList extends Component {
         let k = this.refs.scrollContainer.scrollHeight/this.state.scrollWindowHeight;
         let changeScrollTop = (e) => {
             let newScrollTop = (e.clientY - fatherY - offsetY) * k;
-            this.refs.scrollContainer.scrollTo(0, newScrollTop);
+            if(this.refs.scrollContainer.scrollTo) {
+                this.refs.scrollContainer.scrollTo(0, newScrollTop);
+            }else{
+                this.refs.scrollContainer.scrollTop = newScrollTop;
+            }
+            
         }
         window.onmousemove = changeScrollTop;
         window.onmouseup = ()=> {

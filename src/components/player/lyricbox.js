@@ -17,11 +17,16 @@ export default class LyricBox extends Component {
     }
     componentWillUpdate (nextProps) {
         let lyricScroll = this.refs.lyricscroll;
-        if(lyricScroll.scrollTo) {
-            if(nextProps.currentLine === 0 | Date.now() > this.lastScroll + 5000) {
-            lyricScroll.scrollTo(0, nextProps.currentLine*34>100?nextProps.currentLine*34-100:0);
+        
+        if(nextProps.currentLine === 0 | Date.now() > this.lastScroll + 5000) {
+            if(lyricScroll.scrollTo) {
+                lyricScroll.scrollTo(0, nextProps.currentLine*34>100?nextProps.currentLine*34-100:0);
+            }else{
+                lyricScroll.scrollTop = nextProps.currentLine*34>100?nextProps.currentLine*34-100:0;
             }
+
         }
+        
     }
     setDelay() {
         this.lastScroll = Date.now();
