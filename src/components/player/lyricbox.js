@@ -19,12 +19,7 @@ export default class LyricBox extends Component {
         let lyricScroll = this.refs.lyricscroll;
         
         if(nextProps.currentLine === 0 | Date.now() > this.lastScroll + 5000) {
-            if(lyricScroll.scrollTo) {
-                lyricScroll.scrollTo(0, nextProps.currentLine*34>100?nextProps.currentLine*34-100:0);
-            }else{
-                lyricScroll.scrollTop = nextProps.currentLine*34>100?nextProps.currentLine*34-100:0;
-            }
-
+            lyricScroll.scrollTop = nextProps.currentLine*34>100?nextProps.currentLine*34-100:0;
         }
         
     }
