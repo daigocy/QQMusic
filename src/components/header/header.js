@@ -25,7 +25,7 @@ class Header extends Component {
                     <NavLink to='/'  isActive={isHomepage} exact
                     activeClassName="on">音乐馆</NavLink>
                     <NavLink to='/mymusic/' activeClassName="on">我的音乐</NavLink>
-                    <a href="https://y.qq.com/download/index.html">客户端</a>
+                    <a href="/player.html">客户端</a>
                     <NavLink to='/'>音乐号</NavLink>
                     <NavLink to='/'>VIP</NavLink>
                 </div>
